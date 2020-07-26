@@ -2,8 +2,9 @@ from vk_api.longpoll import VkLongPoll, VkEventType
 import vk_api
 import random
 from vk_api.keyboard import VkKeyboard, VkKeyboardColor
+import private
 
-token = "054b5046ed3de9d9db90376173e72be17b8701b648a0a4a5f8c5f56db0b3eed40e7d99abffdc30d4f1027"
+token = private.TOKEN
 vk_session = vk_api.VkApi(token=token)
 
 session_api = vk_session.get_api()
@@ -41,9 +42,6 @@ def create_keyboard(response):
         keyboard.add_button('Рыбы \n 🐟', color=VkKeyboardColor.DEFAULT)
 
         keyboard.add_line()
-        keyboard.add_button('Подсказка', color=VkKeyboardColor.POSITIVE)
-
-        keyboard.add_line()
         keyboard.add_button('Выберите свой пол еще раз', color=VkKeyboardColor.PRIMARY)
 
     elif response == 'выберите свой пол еще раз':
@@ -72,9 +70,6 @@ def create_keyboard(response):
         keyboard.add_button('Козерог \n 🐐🙃', color=VkKeyboardColor.DEFAULT)
         keyboard.add_button('Водолей \n ♒', color=VkKeyboardColor.DEFAULT)
         keyboard.add_button('Рыбы \n 🐳', color=VkKeyboardColor.DEFAULT)
-
-        keyboard.add_line()
-        keyboard.add_button('Подсказка', color=VkKeyboardColor.POSITIVE)
 
         keyboard.add_line()
         keyboard.add_button('Выберите свой пол еще раз', color=VkKeyboardColor.PRIMARY)
